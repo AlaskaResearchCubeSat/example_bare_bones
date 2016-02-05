@@ -10,9 +10,9 @@
 CTL_TASK_t terminal_task,sub_task;
 
 //stack for terminal
-unsigned terminal_stack[2000];
+unsigned terminal_stack[500];
 //stack for sub_events
-unsigned sub_stack[1000];
+unsigned sub_stack[500];
 
 //make printf and friends use async
 int __putchar(int c){
@@ -35,7 +35,7 @@ void main(void){
   //TESTING: set log level to report everything by default
   set_error_level(0);
   //initialize UART
-  UCA1_init_UART(UART_PORT,UART_TX_PIN_NUM,UART_RX_PIN_NUM);
+  UCA1_init_UART();
 
   //setup bus interface
   initARCbus(0x1F);
